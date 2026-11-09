@@ -1,0 +1,9 @@
+Item,Setting
+Data,"UNSW-NB15 official training partition (175,341 rows) for sampling; official testing partition (82,332 rows) only for the fixed function probe"
+N and seeds,"N = 2,000, 4,000, 8,000 (nested, stratified samples); seeds 101–105"
+Exact KTSVM,"N = 2,000 and 4,000 (five seeds each)"
+Signed Nyström KTSVM,"m = 250 and 1,000 at N = 2,000, 4,000, 8,000 (five seeds each)"
+Kernel and model,"K(x, z) = tanh(γxᵀz + θ), γ = 10/148, θ = −1; c = 1, d = 0.001"
+Solver,"GPCG; stop when r∞ ≤ 10⁻⁶ and gap_rel ≤ 10⁻⁶; HVP budget 2,001,015 per twin"
+Fidelity probes,"200,000 fixed training-row pairs per (seed, N); 5,000 fixed test rows"
+Execution,"One process per cell, one BLAS thread; 40 terminal cells (10 exact, 30 Nyström)"

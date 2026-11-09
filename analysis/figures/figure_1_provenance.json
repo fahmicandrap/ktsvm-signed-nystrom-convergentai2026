@@ -1,0 +1,69 @@
+{
+ "figure": 1,
+ "caption": "Training time (log scale), peak RSS in the training phases, total HVP count (log scale) and retained positive/negative eigenvalues of the landmark block versus N; individual seeds and medians. Exact results exist only for N = 2,000 and 4,000.",
+ "source_csv": "figure_1_source.csv",
+ "source_csv_sha256": "c6a16f8dc297488f892b6b689b0cdb963b4281fcacdeae6862f4fa96f126913e",
+ "figure_png": "figure_1.png",
+ "source_cells": [
+  "EXACT_N002000_s101",
+  "EXACT_N002000_s102",
+  "EXACT_N002000_s103",
+  "EXACT_N002000_s104",
+  "EXACT_N002000_s105",
+  "EXACT_N004000_s101",
+  "EXACT_N004000_s102",
+  "EXACT_N004000_s103",
+  "EXACT_N004000_s104",
+  "EXACT_N004000_s105",
+  "NYS1000_N002000_s101",
+  "NYS1000_N002000_s102",
+  "NYS1000_N002000_s103",
+  "NYS1000_N002000_s104",
+  "NYS1000_N002000_s105",
+  "NYS1000_N004000_s101",
+  "NYS1000_N004000_s102",
+  "NYS1000_N004000_s103",
+  "NYS1000_N004000_s104",
+  "NYS1000_N004000_s105",
+  "NYS1000_N008000_s101",
+  "NYS1000_N008000_s102",
+  "NYS1000_N008000_s103",
+  "NYS1000_N008000_s104",
+  "NYS1000_N008000_s105",
+  "NYS250_N002000_s101",
+  "NYS250_N002000_s102",
+  "NYS250_N002000_s103",
+  "NYS250_N002000_s104",
+  "NYS250_N002000_s105",
+  "NYS250_N004000_s101",
+  "NYS250_N004000_s102",
+  "NYS250_N004000_s103",
+  "NYS250_N004000_s104",
+  "NYS250_N004000_s105",
+  "NYS250_N008000_s101",
+  "NYS250_N008000_s102",
+  "NYS250_N008000_s103",
+  "NYS250_N008000_s104",
+  "NYS250_N008000_s105"
+ ],
+ "aggregation": "every seed is plotted; lines connect per-configuration medians (Fig. 1) or means (kernel panel, Fig. 2); the figure is drawn from the source CSV only",
+ "generating_script": "generate_all_figures.py (regenerate: --from-source <outdir>)",
+ "source_artifacts": {
+  "agg": [
+   "phase11b_aggregates.csv",
+   "ea51d45f5852fd50550e7500ee693554b4b9b45ad0bf3e775191aa10d4e08ca2"
+  ],
+  "wide": [
+   "phase11b_results_wide.csv",
+   "04a5bdaa0072d74c15581c243b202169828a3fe999f29c00b336824598fe3bbc"
+  ],
+  "ff": [
+   "phase11b_function_fidelity_long.csv",
+   "a26d18ae20029b4b2661ccd31c15c1d3e897614096b2c642a15f14352e51ac9b"
+  ]
+ },
+ "exact_series_stops_at_N": 4000,
+ "planning_estimates_used": false,
+ "N16000_used": false,
+ "timestamp_utc": "2026-11-09T04:16:50.533349+00:00"
+}

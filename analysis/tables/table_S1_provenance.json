@@ -1,0 +1,24 @@
+{
+ "table": "S1",
+ "caption": "Experimental configuration (compact).",
+ "source_csv": "table_S1_source.csv",
+ "source_csv_sha256": "7481d2bf3ac41a7dbe8efaed5ddfdac0db1f9b61b5c21c0d9b373428cb1e5e22",
+ "source_cells": [],
+ "source_artifacts": {
+  "agg": [
+   "phase11b_aggregates.csv",
+   "ea51d45f5852fd50550e7500ee693554b4b9b45ad0bf3e775191aa10d4e08ca2"
+  ],
+  "wide": [
+   "phase11b_results_wide.csv",
+   "04a5bdaa0072d74c15581c243b202169828a3fe999f29c00b336824598fe3bbc"
+  ],
+  "ff": [
+   "phase11b_function_fidelity_long.csv",
+   "a26d18ae20029b4b2661ccd31c15c1d3e897614096b2c642a15f14352e51ac9b"
+  ]
+ },
+ "aggregation_formula": "cell values = mean \u00b1 sample SD or median [q1\u2013q3] (numpy linear percentiles) over the five seeds of the configuration, from phase11b_aggregates.csv",
+ "generating_script": "generate_all_tables.py + evidence.py",
+ "timestamp_utc": "2026-11-09T04:16:47.738136+00:00"
+}

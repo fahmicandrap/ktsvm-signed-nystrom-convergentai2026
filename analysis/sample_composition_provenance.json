@@ -1,0 +1,5 @@
+{
+ "rule": "unique rows over the 42 raw predictor columns of the official training CSV (id, attack_cat, label excluded), as in g0_raw_data_validation.json; descriptive data count, no model run",
+ "cross_check_full_partition_unique": 101040,
+ "training_csv_sha256_prefix": "bec7dd5ec88d"
+}

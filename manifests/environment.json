@@ -1,0 +1,40 @@
+{
+ "created_utc": "2026-09-20T11:42:40.747683+00:00",
+ "cpu_model": "Intel(R) Xeon(R) Processor @ 2.10GHz",
+ "logical_cores": 1,
+ "affinity_cores": 1,
+ "MemAvailable_bytes_now": 3755507712,
+ "MemAvailable_bytes_at_phase9a_audit": 3890585600,
+ "swap_total_bytes": 0,
+ "python": "3.12.3",
+ "numpy": "2.4.4",
+ "scipy": "1.17.1",
+ "pandas": "3.0.2",
+ "blas": [
+  "scipy-openblas",
+  "0.3.31.188.0"
+ ],
+ "thread_policy": {
+  "ok": true,
+  "env": {
+   "OMP_NUM_THREADS": "1",
+   "OPENBLAS_NUM_THREADS": "1",
+   "MKL_NUM_THREADS": "1",
+   "NUMEXPR_NUM_THREADS": "1"
+  },
+  "pools": [
+   {
+    "api": "openblas",
+    "num_threads": 1
+   }
+  ],
+  "status": null
+ },
+ "free_storage_bytes": {
+  "/home/claude": 10703257600,
+  "/tmp": 10703257600
+ },
+ "platform": "Linux-6.18.44-fc-v37-x86_64-with-glibc2.39",
+ "same_environment_as_phase9a_audit": true,
+ "psutil_available": true
+}

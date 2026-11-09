@@ -1,0 +1,275 @@
+{
+ "description": "Identifier manifests used by the 40 cells (seeds 101-105; N = 2,000, 4,000, 8,000). Files are numpy .npy arrays of official row ids (sampling), sampled-row ids in landmark order (landmarks) or ordered pairs of sample positions (kernel pairs).",
+ "files": [
+  {
+   "path": "manifests/sampling/s101_N002000.npy",
+   "seed": 101,
+   "N": 2000,
+   "sha256": "340f236d631a078d19220861ea4bf1b2f3444c9bec5829fbf7d8f48d17f74ae0"
+  },
+  {
+   "path": "manifests/sampling/s101_N004000.npy",
+   "seed": 101,
+   "N": 4000,
+   "sha256": "b52ebb9e9bc4da537bcce20a5c07ec0ce5dd5e1d39d3c049f7f6c83b1453e819"
+  },
+  {
+   "path": "manifests/sampling/s101_N008000.npy",
+   "seed": 101,
+   "N": 8000,
+   "sha256": "849ab0266f2de25bf87f9ee5ed171733237733c72b050da1a9a1f0d41e48048c"
+  },
+  {
+   "path": "manifests/sampling/s102_N002000.npy",
+   "seed": 102,
+   "N": 2000,
+   "sha256": "45633dfa1090be0ffbe4cae19019970796b2e027f4827897354854d321e7ad10"
+  },
+  {
+   "path": "manifests/sampling/s102_N004000.npy",
+   "seed": 102,
+   "N": 4000,
+   "sha256": "ab67cc1920f18b957797c50477e3a9ab08bf381f17b636ac4e77f293667ffa69"
+  },
+  {
+   "path": "manifests/sampling/s102_N008000.npy",
+   "seed": 102,
+   "N": 8000,
+   "sha256": "33f370edd17251e87a4775051abda334a348bdb0c9ea191e3e4f5f44a2d1e269"
+  },
+  {
+   "path": "manifests/sampling/s103_N002000.npy",
+   "seed": 103,
+   "N": 2000,
+   "sha256": "6e7deea009444805d9c060baf4b30df8e220ad3248174299159aedb154774549"
+  },
+  {
+   "path": "manifests/sampling/s103_N004000.npy",
+   "seed": 103,
+   "N": 4000,
+   "sha256": "dea110c5ef4cc85789ec4e7d60ccb22427ebd63959220596f7fe4d9764ab6940"
+  },
+  {
+   "path": "manifests/sampling/s103_N008000.npy",
+   "seed": 103,
+   "N": 8000,
+   "sha256": "45bdc1de30cf8b1248511de75f203fcb83810e8458947c03efa74e0e8d51cb62"
+  },
+  {
+   "path": "manifests/sampling/s104_N002000.npy",
+   "seed": 104,
+   "N": 2000,
+   "sha256": "91c5260cf4d5ca1b9851b056be96ef0fbb0a10015bfe65b2edf32664011703e3"
+  },
+  {
+   "path": "manifests/sampling/s104_N004000.npy",
+   "seed": 104,
+   "N": 4000,
+   "sha256": "38f4b35cef9d0da81ffdcad88b076027964fba95862dfd69e7a8f15ea36da60b"
+  },
+  {
+   "path": "manifests/sampling/s104_N008000.npy",
+   "seed": 104,
+   "N": 8000,
+   "sha256": "839ec608f9d6d5d1e589e337a31045c08982cb2124cdf2514135c4dcd0526af5"
+  },
+  {
+   "path": "manifests/sampling/s105_N002000.npy",
+   "seed": 105,
+   "N": 2000,
+   "sha256": "2d5e2ecf4cf840f1bd6b1d311038ac69fd237c408ad442a710c35b57777fffa0"
+  },
+  {
+   "path": "manifests/sampling/s105_N004000.npy",
+   "seed": 105,
+   "N": 4000,
+   "sha256": "037d20c109508500f75fcbbb4ed87ba49ece3a3086ce2c7508d2b3004408b73b"
+  },
+  {
+   "path": "manifests/sampling/s105_N008000.npy",
+   "seed": 105,
+   "N": 8000,
+   "sha256": "b3900a68556852ea6c9480d9f8dc03a94a4569dae2546a180de0cb6a34eaaaf0"
+  },
+  {
+   "path": "manifests/landmarks/lm_s101_N002000.npy",
+   "seed": 101,
+   "N": 2000,
+   "sha256": "94e8041f6cd62bce28608fe04474a22d4037e10ef757d483cf8692400c71146d"
+  },
+  {
+   "path": "manifests/landmarks/lm_s101_N004000.npy",
+   "seed": 101,
+   "N": 4000,
+   "sha256": "4953b7e43e0976a35435cc6678f24b355b2da02426e3010155bd2d09c448d0c8"
+  },
+  {
+   "path": "manifests/landmarks/lm_s101_N008000.npy",
+   "seed": 101,
+   "N": 8000,
+   "sha256": "2b56564b4d5427a6756e6008997c19c2177bc5c8438234411083776e9ca95592"
+  },
+  {
+   "path": "manifests/landmarks/lm_s102_N002000.npy",
+   "seed": 102,
+   "N": 2000,
+   "sha256": "b61a96407b4341e413a6b5034482430c1f112748b48ffab80cd9bc449280b5b4"
+  },
+  {
+   "path": "manifests/landmarks/lm_s102_N004000.npy",
+   "seed": 102,
+   "N": 4000,
+   "sha256": "c18e2aad95e5a0e9199f478ca4e03cb3b5f62c6132968fbe1f3f333dc98117e8"
+  },
+  {
+   "path": "manifests/landmarks/lm_s102_N008000.npy",
+   "seed": 102,
+   "N": 8000,
+   "sha256": "e4baf79e35aa65b287637f2707c08c2553cbd326bf617c7ab2e859d062de0816"
+  },
+  {
+   "path": "manifests/landmarks/lm_s103_N002000.npy",
+   "seed": 103,
+   "N": 2000,
+   "sha256": "6d7ae0ea8c5c9376b66b393bf512eb3ebb9265c7106da9460117b3c85c63ca6e"
+  },
+  {
+   "path": "manifests/landmarks/lm_s103_N004000.npy",
+   "seed": 103,
+   "N": 4000,
+   "sha256": "27f42c29241ab7ca417e3bdac6c29e817dbde048c152a1afedf32bfaef6c3daf"
+  },
+  {
+   "path": "manifests/landmarks/lm_s103_N008000.npy",
+   "seed": 103,
+   "N": 8000,
+   "sha256": "2370bbed566e07f6ba0fe85bab7ffe03ec1073155ecf5708482d56557cabe953"
+  },
+  {
+   "path": "manifests/landmarks/lm_s104_N002000.npy",
+   "seed": 104,
+   "N": 2000,
+   "sha256": "d18ec1f2b64c83f4998f10958d954e9bdca513cc214dc2a56b3f82379f708fbd"
+  },
+  {
+   "path": "manifests/landmarks/lm_s104_N004000.npy",
+   "seed": 104,
+   "N": 4000,
+   "sha256": "49206c1d2b506c56245bbec0bd5ca2edb32c838006e4c7520c8f98c1d1c89e2b"
+  },
+  {
+   "path": "manifests/landmarks/lm_s104_N008000.npy",
+   "seed": 104,
+   "N": 8000,
+   "sha256": "6e0feb97dc2c6d830d1e0933d3b8b56feab90d14da59d1ef3f691ea270c54456"
+  },
+  {
+   "path": "manifests/landmarks/lm_s105_N002000.npy",
+   "seed": 105,
+   "N": 2000,
+   "sha256": "73122142924827af412347a5b728c193f6c665e3a4f3c1a6487d00b21aabcbef"
+  },
+  {
+   "path": "manifests/landmarks/lm_s105_N004000.npy",
+   "seed": 105,
+   "N": 4000,
+   "sha256": "0390bf598ac1419db76fc9eede1b8af54d38b95b6789baa52cbf81f9bfb19291"
+  },
+  {
+   "path": "manifests/landmarks/lm_s105_N008000.npy",
+   "seed": 105,
+   "N": 8000,
+   "sha256": "faf3db4d99ac82ce72c9ac07adf1c131f225e514d032337829a2ec251232542a"
+  },
+  {
+   "path": "manifests/kernel_pairs/pairs_s101_N002000.npy",
+   "seed": 101,
+   "N": 2000,
+   "sha256": "a887e3cf546cf1fcec1cb6432f1533a5c9a3e31620d78631af16f7b67007bcc8"
+  },
+  {
+   "path": "manifests/kernel_pairs/pairs_s101_N004000.npy",
+   "seed": 101,
+   "N": 4000,
+   "sha256": "a1a29f39f52e534975c2ff70db0428c8e7df03cbeefaa96daad7d6fb4799c3f6"
+  },
+  {
+   "path": "manifests/kernel_pairs/pairs_s101_N008000.npy",
+   "seed": 101,
+   "N": 8000,
+   "sha256": "192ffcdb79ab855e1c5b6fa4d1b9d8044023893828e572260522ee6a8840b2b0"
+  },
+  {
+   "path": "manifests/kernel_pairs/pairs_s102_N002000.npy",
+   "seed": 102,
+   "N": 2000,
+   "sha256": "8e01360124c91b1140e9d226bbc12c22f6ecf5bc710a1f52abaa0c31589f82ae"
+  },
+  {
+   "path": "manifests/kernel_pairs/pairs_s102_N004000.npy",
+   "seed": 102,
+   "N": 4000,
+   "sha256": "98eea5edcddce19e05da7e823f6497a84f9b2a9c177cc6ea1f738371d274b869"
+  },
+  {
+   "path": "manifests/kernel_pairs/pairs_s102_N008000.npy",
+   "seed": 102,
+   "N": 8000,
+   "sha256": "e55203c5bad457105f0cb80b1692fa865de263b905492c600524264979ab81e9"
+  },
+  {
+   "path": "manifests/kernel_pairs/pairs_s103_N002000.npy",
+   "seed": 103,
+   "N": 2000,
+   "sha256": "013fe93aa5f74e18793e99ea3e5693966e2433f02b70bd689983aca9eb33001b"
+  },
+  {
+   "path": "manifests/kernel_pairs/pairs_s103_N004000.npy",
+   "seed": 103,
+   "N": 4000,
+   "sha256": "875d0b411384da562f8f74657deba7e562e4a84623d6a50ee6e2b9431d4d2b68"
+  },
+  {
+   "path": "manifests/kernel_pairs/pairs_s103_N008000.npy",
+   "seed": 103,
+   "N": 8000,
+   "sha256": "426c4cc52dd91480703fc31fafb513902ed30a2af4879dc900875efd183ebde3"
+  },
+  {
+   "path": "manifests/kernel_pairs/pairs_s104_N002000.npy",
+   "seed": 104,
+   "N": 2000,
+   "sha256": "e3db326edf000af8cf709718bfc04699bd5db63628280a80dd9666484eed81fb"
+  },
+  {
+   "path": "manifests/kernel_pairs/pairs_s104_N004000.npy",
+   "seed": 104,
+   "N": 4000,
+   "sha256": "48ede27be112f0315e7470e155a67ad9e04fbf87141baea5f894b2ed18f149be"
+  },
+  {
+   "path": "manifests/kernel_pairs/pairs_s104_N008000.npy",
+   "seed": 104,
+   "N": 8000,
+   "sha256": "14dd8b02d13279245407caeab2e7b87b023c02704c05f145c3047f08383fcdc1"
+  },
+  {
+   "path": "manifests/kernel_pairs/pairs_s105_N002000.npy",
+   "seed": 105,
+   "N": 2000,
+   "sha256": "f7898cf969212afcad7fde762223d0fab476d2b5761695bb904b0aca7c5abaec"
+  },
+  {
+   "path": "manifests/kernel_pairs/pairs_s105_N004000.npy",
+   "seed": 105,
+   "N": 4000,
+   "sha256": "fa5ffdaf2814810fe5cab9a24a3f2f91b601ddb8cf819a5b58afb019c5e76623"
+  },
+  {
+   "path": "manifests/kernel_pairs/pairs_s105_N008000.npy",
+   "seed": 105,
+   "N": 8000,
+   "sha256": "c043018187acc82c39df03d742c870b1c584dabff95600921d93d8870fc94d1a"
+  }
+ ]
+}

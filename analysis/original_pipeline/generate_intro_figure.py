@@ -1,0 +1,42 @@
+#!/usr/bin/env python3
+"""Conceptual schematic for the Introduction (no measured data). Every block is a verified methodological statement (see intro_figure_source.md).
+Usage: python3 generate_intro_figure.py [--outdir DIR]  -> intro_figure.png (600 dpi), intro_figure.svg, intro_figure.pdf, provenance + source note."""
+import sys, os, json, hashlib, datetime, re
+import matplotlib; matplotlib.use("Agg"); import matplotlib.pyplot as plt
+from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
+HERE = os.path.dirname(os.path.abspath(__file__)) + "/"; B = "/mnt/user-data/outputs/bima_ktsvm_study/"
+out = sys.argv[sys.argv.index("--outdir") + 1] + "/" if "--outdir" in sys.argv else HERE; os.makedirs(out, exist_ok=True)
+plt.rcParams.update({"font.size": 6.6, "mathtext.fontset": "dejavuserif", "svg.hashsalt": "ktsvm"})
+BLOCKS = {
+ "exact_title": "Exact KTSVM", "exact_1": "Indefinite Gram matrix $K\\in\\mathbb{R}^{N\\times N}$\n(positive and negative eigen-directions)", "exact_2": "Dense twin operators\n$M_\\ell,\\ H_\\ell=S_{\\ell'}^{\\top}M_\\ell^{-1}S_{\\ell'}$", "exact_3": "GPCG on the dense dual;\nstorage of $N\\times N$ entries",
+ "nys_title": "Signed Nyström KTSVM (matrix-free)", "nys_1": "$m$ landmark columns: $C=K[:,\\mathcal{L}]$,\n$W=K[\\mathcal{L},\\mathcal{L}]=U\\Lambda U^{\\top}$", "nys_2": "Retain positive and negative\neigen-directions: $\\Phi$, signature $J$", "nys_3": "Matrix-free HVP, cost $O(N_{\\ell'}r+r^{2})$;\nreduced SPD system of order $r+1$",
+ "bottom": "Question studied: training time, memory and convergence\nversus kernel-pair and raw-function fidelity to the exact solution"}
+fig, ax = plt.subplots(figsize=(4.72, 2.2)); fig.subplots_adjust(left=0.005, right=0.995, bottom=0.01, top=0.99); ax.set_xlim(0, 100); ax.set_ylim(0, 52); ax.axis("off")
+def box(x, y, w, h, txt, fc, ec="#333333", lw=0.7, fs=5.9, weight="normal"):
+    ax.add_patch(FancyBboxPatch((x, y), w, h, boxstyle="round,pad=0.2,rounding_size=1.0", fc=fc, ec=ec, lw=lw)); ax.text(x + w / 2, y + h / 2, txt, ha="center", va="center", fontsize=fs, fontweight=weight, linespacing=1.2)
+def arrow(x, y1, y2, col="#333333"): ax.add_patch(FancyArrowPatch((x, y1), (x, y2), arrowstyle="-|>", mutation_scale=5, lw=0.7, color=col))
+for x0, key, col in ((1.5, "exact", "#f4f4f4"), (51.5, "nys", "#eaf2fb")):
+    ax.add_patch(FancyBboxPatch((x0, 13.2), 47, 38, boxstyle="round,pad=0.2,rounding_size=1.2", fc="white", ec="#888888", lw=0.8)); ax.text(x0 + 23.5, 48.6, BLOCKS[key + "_title"], ha="center", va="center", fontsize=6.6, fontweight="bold")
+    ys = (36.2, 25.0, 13.8)
+    for i, yy in enumerate(ys): box(x0 + 2, yy, 43, 8.6, BLOCKS[f"{key}_{i+1}"], col)
+    arrow(x0 + 23.5, ys[0], ys[0] - 2.2); arrow(x0 + 23.5, ys[1], ys[1] - 2.2)
+box(1.5, 0.8, 97, 8.0, BLOCKS["bottom"], "#fff4dc", ec="#aa7700")
+for xc in (25, 75): arrow(xc, 13.0, 9.2, col="#aa7700")
+ax.text(50, 32, "vs.", ha="center", va="center", fontsize=6.6, style="italic")
+fig.savefig(out + "intro_figure.png", dpi=600); fig.savefig(out + "intro_figure.svg", metadata={"Date": None, "Creator": "generate_intro_figure.py"}); fig.savefig(out + "intro_figure.pdf", metadata={"CreationDate": None, "Creator": "generate_intro_figure.py", "Producer": "matplotlib"}); plt.close(fig)
+sha = lambda p: hashlib.sha256(open(p, "rb").read()).hexdigest()
+if "--outdir" in sys.argv: sys.exit(0)
+def grab(path, pat):
+    for i, l in enumerate(open(B + path, encoding="utf8").read().split("\n")):
+        if re.search(pat, l): return f"{path}:{i+1}"
+    return "NOT FOUND"
+MAP = [("Exact KTSVM / Gram matrix K (N x N, indefinite)", "manuscript Sect. 3.1; Table 1 (sigmoid kernel); Sect. 4.2 (retained spectra contain both signs)", grab("g2/exact_ktsvm.py", r"def sigmoid_gram")),
+       ("Dense twin operators M_l, H_l = S_l'^T M_l^-1 S_l'", "manuscript Eqs. (1)-(2), Sect. 3.1", grab("g2/exact_ktsvm.py", r"H_raw = S_opp.T @ Y")),
+       ("GPCG on the dense dual; N x N storage", "manuscript Sect. 3.1 and 3.3 (exact reference forms K, S, M, H densely)", grab("g2r3/gpcg_solver.py", r"def gpcg")),
+       ("m landmark columns; C = K[:,calL]; W = K[calL,calL] = U Lambda U^T", "manuscript Sect. 3.2, Eq. (3)", grab("g3r1/signed_nystrom.py", r"np.linalg.eigh")),
+       ("Retain positive and negative eigen-directions; Phi, signature J", "manuscript Sect. 3.2 (no clipping); Sect. 4.2 Fig. 3b", grab("g3r1/signed_nystrom.py", r"J = np.sign")),
+       ("Matrix-free HVP, cost O(N_l' r + r^2); reduced SPD system of order r+1", "manuscript Sect. 3.3, Eq. (4)", grab("g3r1/nystrom_ktsvm_matrixfree_spd.py", r"return self.Z_o.T @ self._reduced_apply")),
+       ("Resource-fidelity question", "manuscript Sect. 1 (objective), Sects. 4.1-4.4 (measurements)", "study design (phase11a_compact_scope.json)")]
+open(HERE + "intro_figure_source.md", "w").write("# Introduction figure — source and traceability (conceptual schematic)\nThe figure contains no measured value and no empirical number. It is generated by `generate_intro_figure.py` (matplotlib; PNG at 600 dpi, plus SVG and PDF vector versions).\n\n| Diagram block | Manuscript support | Implementation evidence (file:line) |\n|---|---|---|\n" + "".join(f"| {a} | {b} | `{c}` |\n" for a, b, c in MAP) + "\nComplexity expressions used: dense N x N storage (Sect. 3.3); matrix-free HVP cost O(N_l' r + r^2) (Sect. 3.3). No other complexity claim is drawn.\n")
+json.dump({"figure": "intro_figure", "kind": "conceptual schematic", "contains_measured_data": False, "generating_script": "generate_intro_figure.py", "png": "intro_figure.png", "png_sha256": sha(HERE + "intro_figure.png"), "svg_sha256": sha(HERE + "intro_figure.svg"), "pdf_sha256": sha(HERE + "intro_figure.pdf"), "text_blocks": list(BLOCKS.values()), "block_traceability": [{"block": a, "manuscript": b, "implementation": c} for a, b, c in MAP], "source_note": "intro_figure_source.md", "timestamp_utc": datetime.datetime.now(datetime.timezone.utc).isoformat()}, open(HERE + "intro_figure_provenance.json", "w"), indent=1)
+print("intro figure written")

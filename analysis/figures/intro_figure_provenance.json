@@ -1,0 +1,60 @@
+{
+ "figure": "intro_figure",
+ "kind": "conceptual schematic",
+ "contains_measured_data": false,
+ "generating_script": "generate_intro_figure.py",
+ "png": "intro_figure.png",
+ "png_sha256": "d82e3338674ccbaf6f7165a8f613415f060366e14c898b3df3cd373e22dbf8a8",
+ "svg_sha256": "0810a0d8013b35c0b7ba9ad39051b63291a02b44927f19949c8023582fe81110",
+ "pdf_sha256": "8ce21bca8e9cecdb827df3f1b3a55106e3dd4e9fcd3b254d2d8eac4435801002",
+ "text_blocks": [
+  "Exact KTSVM",
+  "Indefinite Gram matrix $K\\in\\mathbb{R}^{N\\times N}$\n(positive and negative eigen-directions)",
+  "Dense twin operators\n$M_\\ell,\\ H_\\ell=S_{\\ell'}^{\\top}M_\\ell^{-1}S_{\\ell'}$",
+  "GPCG on the dense dual;\nstorage of $N\\times N$ entries",
+  "Signed Nystr\u00f6m KTSVM (matrix-free)",
+  "$m$ landmark columns: $C=K[:,\\mathcal{L}]$,\n$W=K[\\mathcal{L},\\mathcal{L}]=U\\Lambda U^{\\top}$",
+  "Retain positive and negative\neigen-directions: $\\Phi$, signature $J$",
+  "Matrix-free HVP, cost $O(N_{\\ell'}r+r^{2})$;\nreduced SPD system of order $r+1$",
+  "Question studied: training time, memory and convergence\nversus kernel-pair and raw-function fidelity to the exact solution"
+ ],
+ "block_traceability": [
+  {
+   "block": "Exact KTSVM / Gram matrix K (N x N, indefinite)",
+   "manuscript": "manuscript Sect. 3.1; Table 1 (sigmoid kernel); Sect. 4.2 (retained spectra contain both signs)",
+   "implementation": "g2/exact_ktsvm.py:20"
+  },
+  {
+   "block": "Dense twin operators M_l, H_l = S_l'^T M_l^-1 S_l'",
+   "manuscript": "manuscript Eqs. (1)-(2), Sect. 3.1",
+   "implementation": "g2/exact_ktsvm.py:40"
+  },
+  {
+   "block": "GPCG on the dense dual; N x N storage",
+   "manuscript": "manuscript Sect. 3.1 and 3.3 (exact reference forms K, S, M, H densely)",
+   "implementation": "g2r3/gpcg_solver.py:44"
+  },
+  {
+   "block": "m landmark columns; C = K[:,calL]; W = K[calL,calL] = U Lambda U^T",
+   "manuscript": "manuscript Sect. 3.2, Eq. (3)",
+   "implementation": "g3r1/signed_nystrom.py:13"
+  },
+  {
+   "block": "Retain positive and negative eigen-directions; Phi, signature J",
+   "manuscript": "manuscript Sect. 3.2 (no clipping); Sect. 4.2 Fig. 3b",
+   "implementation": "g3r1/signed_nystrom.py:19"
+  },
+  {
+   "block": "Matrix-free HVP, cost O(N_l' r + r^2); reduced SPD system of order r+1",
+   "manuscript": "manuscript Sect. 3.3, Eq. (4)",
+   "implementation": "g3r1/nystrom_ktsvm_matrixfree_spd.py:43"
+  },
+  {
+   "block": "Resource-fidelity question",
+   "manuscript": "manuscript Sect. 1 (objective), Sects. 4.1-4.4 (measurements)",
+   "implementation": "study design (phase11a_compact_scope.json)"
+  }
+ ],
+ "source_note": "intro_figure_source.md",
+ "timestamp_utc": "2026-11-09T04:16:52.779790+00:00"
+}
