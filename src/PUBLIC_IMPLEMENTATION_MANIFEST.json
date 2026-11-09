@@ -1,0 +1,119 @@
+{
+ "description": "SHA-256 of every source file in src/. The eight files marked frozen are byte-identical to the validated implementation fixed before any experimental cell was run.",
+ "files": [
+  {
+   "path": "src/g1/preprocessing.py",
+   "sha256": "7d7fbab354145f3ba307585aeed2bcbb5e1c57aa65922e6e026aadcb3593d1ca",
+   "frozen": true,
+   "matches_frozen_hash": true
+  },
+  {
+   "path": "src/g1/feature_schema_v2.json",
+   "sha256": "fff5369bd8d34d7d4a8835923bd54e6aefa322f8496c04afe4c6040c2376f5f5",
+   "frozen": true,
+   "matches_frozen_hash": true
+  },
+  {
+   "path": "src/g1/categorical_vocabulary_v2.json",
+   "sha256": "49efafef1aaaf3ac8aaf2bbb2ced4814bf404d38d8c043105781a610b6fbed21",
+   "frozen": true,
+   "matches_frozen_hash": true
+  },
+  {
+   "path": "src/g2/exact_ktsvm.py",
+   "sha256": "fb462bf53c0174a8077751cd36f48c2c7e9df39797ec6cb0afb235cd28a9d7a1",
+   "frozen": true,
+   "matches_frozen_hash": true
+  },
+  {
+   "path": "src/g2/g2_validation_subset_row_ids.json",
+   "sha256": "ddb9522b11f6a0bd0927d8ad64973c3e2662b360910f79ab86a88bd97dee50e6",
+   "frozen": false,
+   "matches_frozen_hash": null
+  },
+  {
+   "path": "src/g2r/g2r_common.py",
+   "sha256": "f19a161da3515a1918fc527c3ef8d2e4c4cb6493342ba092340751f903a63bfb",
+   "frozen": true,
+   "matches_frozen_hash": true
+  },
+  {
+   "path": "src/g2r/g2r_solver_config.json",
+   "sha256": "cfef246d421e594440073b86e61887c6f0b027e16b57e792628f6edb830fb89e",
+   "frozen": false,
+   "matches_frozen_hash": null
+  },
+  {
+   "path": "src/g2r3/gpcg_solver.py",
+   "sha256": "a307b122dff4eb9799d01e550532b2340ce907dd5b797a18f577eacc1ac91075",
+   "frozen": true,
+   "matches_frozen_hash": true
+  },
+  {
+   "path": "src/g3r1/signed_nystrom.py",
+   "sha256": "23012b6caf158182ba4d139d8ecb9bf9d5cc58c7517ea7e73e6894372e96b962",
+   "frozen": true,
+   "matches_frozen_hash": true
+  },
+  {
+   "path": "src/g3r1/nystrom_ktsvm_matrixfree_spd.py",
+   "sha256": "930a175a531e414f8e397a27574c26fb0de1e9bed73830ac367a2c2dd35aa27e",
+   "frozen": true,
+   "matches_frozen_hash": true
+  },
+  {
+   "path": "src/g3r2/g3r2_audit_utils.py",
+   "sha256": "2adfb17755940d6ea9b25c9c3e74b741e49bba072a6bac5653d6db7f930e24af",
+   "frozen": false,
+   "matches_frozen_hash": null
+  },
+  {
+   "path": "src/phase9/phase9_validated_implementation_manifest.json",
+   "sha256": "0057ebd8252ff2caa2991fa1d85eafee8e15b1eec8f167d5a960c8506c7d4f1a",
+   "frozen": false,
+   "matches_frozen_hash": null
+  },
+  {
+   "path": "src/phase9b/cell_worker.py",
+   "sha256": "53bce77658cb42f46974db436378aa5ece55474b4bb6aad13fdab13d188e6cd4",
+   "frozen": false,
+   "matches_frozen_hash": null
+  },
+  {
+   "path": "src/phase9b/measurement.py",
+   "sha256": "0da438b88ed7bb8d040b3c547729b76d1abf96babff7dbd805ed4c8081d08b5f",
+   "frozen": false,
+   "matches_frozen_hash": null
+  },
+  {
+   "path": "src/phase9b/sampling.py",
+   "sha256": "809af91fb3fd459aad6358901d593cf2174e415b76bb7eaa79d4590f19eeb409",
+   "frozen": false,
+   "matches_frozen_hash": null
+  },
+  {
+   "path": "src/phase9b/landmark_generator.py",
+   "sha256": "cc4100392bc5e176bae1bfee7c356e598bcbf2bd0d2c0e92898ba59f5a2ddc85",
+   "frozen": false,
+   "matches_frozen_hash": null
+  },
+  {
+   "path": "src/phase9b/probe_generator.py",
+   "sha256": "ced3bb0bd3faef6321a4b3b297c61977844618fbea9741d93c77f18508ee4871",
+   "frozen": false,
+   "matches_frozen_hash": null
+  },
+  {
+   "path": "src/phase9b/resource_preflight.py",
+   "sha256": "87ed85d011c5f7c29ca41dabe9bc6910e4478a42a6422d128e74f8824a7bebf0",
+   "frozen": false,
+   "matches_frozen_hash": null
+  },
+  {
+   "path": "src/phase9b/phase9b_metric_definitions.json",
+   "sha256": "75f5afb143c5bbbb06c114b49d956bc2fbe818de37491f6840173cdc6e30f4c4",
+   "frozen": false,
+   "matches_frozen_hash": null
+  }
+ ]
+}

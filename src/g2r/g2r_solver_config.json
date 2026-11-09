@@ -1,0 +1,93 @@
+{
+ "status": "FROZEN BEFORE ANY G2-R SOLVER RUN",
+ "frozen_utc": "2026-09-20T05:16:14.959104+00:00",
+ "problem_unchanged": {
+  "c": 1.0,
+  "d": 0.001,
+  "kernel": "tanh(gamma x^T z + theta)",
+  "gamma": "10/148 = 0.06756756756756757",
+  "theta": -1.0,
+  "preprocessing": "V2 (194 dimensions), scaler fitted on each validation subset only",
+  "data": "same deterministic nested validation subsets N=100,300,500 (g2/g2_validation_subset_row_ids.json); no resampling",
+  "forbidden_and_not_used": [
+   "extra ridge on H",
+   "eigenvalue clipping",
+   "new PSD projection",
+   "|K|",
+   "spectral majorant",
+   "change of c, d, kernel, data or preprocessing"
+  ]
+ },
+ "acceptance_thresholds_unchanged": {
+  "natural_residual_inf": 1e-06,
+  "relative_duality_gap": 1e-06,
+  "bound_violation": 1e-12
+ },
+ "dual_problem": "min_alpha 0.5 alpha^T H alpha - 1^T alpha  s.t. 0 <= alpha <= c",
+ "H_computation": {
+  "definition": "H = S_opp^T M^{-1} S_opp, M = S_ell S_ell^T + d I",
+  "numerical_method": "LU solve of M followed by 2 steps of iterative refinement with long-double residuals; then H <- (H+H^T)/2 (symmetrization recorded)",
+  "reason": "cond(M) reaches ~1e7-1e8; the unrefined Cholesky/LU H differs from the refined H by up to ~5e-7 per entry, which is comparable to the residual threshold. Same mathematical H, computed more accurately; the same H is used by every solver and by the validator.",
+  "cross_path_difference_reported": true
+ },
+ "osqp": {
+  "package": "osqp (installed with permission; only this package)",
+  "mapping": {
+   "P": "H (symmetric; upper triangle passed)",
+   "q": "-1 vector",
+   "A": "identity",
+   "l": 0.0,
+   "u": "c"
+  },
+  "settings": {
+   "eps_abs": 1e-08,
+   "eps_rel": 1e-08,
+   "max_iter": 500000,
+   "polishing": true,
+   "verbose": false,
+   "other_settings": "OSQP defaults"
+  },
+  "no_explicit_ridge": true,
+  "internal_residuals_used_as_criterion": false,
+  "solution_handling": "raw OSQP alpha is evaluated by the validator; bound violation of the raw alpha is reported; all other certificates are evaluated on alpha projected onto [0,c] (projection reported)"
+ },
+ "projected_gradient": {
+  "algorithm": "monotone projected gradient with Armijo backtracking along the projection arc",
+  "alpha_0": "0",
+  "gradient": "g = H alpha - 1 (analytic)",
+  "projection": "Pi(z)_i = min(c, max(0, z_i))",
+  "step_rule": {
+   "initial_trial_step_first_iteration": 1.0,
+   "initial_trial_step_later": "min(2 * last accepted step, 1e6)",
+   "backtracking_factor": 0.5,
+   "armijo_sigma": 0.0001,
+   "acceptance": "q(alpha+) <= q(alpha) + sigma * g^T (alpha+ - alpha)",
+   "q_evaluation": "exact for the quadratic: q(alpha+) = q(alpha) + g^T d + 0.5 d^T H d with d = alpha+ - alpha (one Hessian-vector product per trial); g+ = g + H d"
+  },
+  "stopping_criterion": "natural residual r_inf = max_i |alpha_i - Pi(alpha_i - g_i)| <= 1e-6, evaluated at every accepted iterate",
+  "max_iterations": 1000000,
+  "stagnation_guard": "stop if the trial step falls below 1e-30",
+  "history_checkpoint_every": 10000,
+  "hessian_access": "only through a callable hvp(x) = H x (dense H is used for the exact model at these sizes)",
+  "no_objective_reduction_stopping_rule": true,
+  "not_claimed_as_novelty": true,
+  "gradient_refresh_every": 1000
+ },
+ "permutation_retest": "N=100, same deterministic permutation rule as G2, with the production solver",
+ "n2000_gating": "run only if validator audit, OSQP reference and production solver all pass at N=100,300,500",
+ "not_done": [
+  "Nystrom",
+  "main experiment",
+  "prediction metrics",
+  "manuscript"
+ ],
+ "amendments": [
+  {
+   "id": "amendment_1",
+   "utc": "2026-09-20T05:18:56.399432+00:00",
+   "made_before_any_projected_gradient_run": true,
+   "change": "projected_gradient.gradient_refresh_every = 1000 iterations: the analytic gradient g = H alpha - 1 is recomputed from scratch every 1000 iterations to remove drift of the update g <- g + H d. This does not change the algorithm, the step rule, the stopping criterion or the thresholds.",
+   "osqp_amendment": "none; OSQP reference already run and evaluated with the settings above (all six problems met the thresholds)."
+  }
+ ]
+}

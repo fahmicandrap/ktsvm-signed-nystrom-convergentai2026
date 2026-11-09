@@ -1,0 +1,65 @@
+{
+ "created_utc": "2026-09-20T11:03:58.982408+00:00",
+ "label": "FINAL VALIDATED IMPLEMENTATION",
+ "statuses": {
+  "data": "G0 PASS",
+  "preprocessing": "G1 PASS",
+  "exact_KTSVM_and_GPCG": "G2 PASS",
+  "signed_Nystrom_matrix_free": "G3 PASS"
+ },
+ "implementation_files": {
+  "preprocessing.py": {
+   "path": "g1/preprocessing.py",
+   "sha256": "7d7fbab354145f3ba307585aeed2bcbb5e1c57aa65922e6e026aadcb3593d1ca"
+  },
+  "feature_schema_v2.json": {
+   "path": "g1/feature_schema_v2.json",
+   "sha256": "fff5369bd8d34d7d4a8835923bd54e6aefa322f8496c04afe4c6040c2376f5f5"
+  },
+  "categorical_vocabulary_v2.json": {
+   "path": "g1/categorical_vocabulary_v2.json",
+   "sha256": "49efafef1aaaf3ac8aaf2bbb2ced4814bf404d38d8c043105781a610b6fbed21"
+  },
+  "exact_ktsvm.py": {
+   "path": "g2/exact_ktsvm.py",
+   "sha256": "fb462bf53c0174a8077751cd36f48c2c7e9df39797ec6cb0afb235cd28a9d7a1"
+  },
+  "g2r_common.py": {
+   "path": "g2r/g2r_common.py",
+   "sha256": "f19a161da3515a1918fc527c3ef8d2e4c4cb6493342ba092340751f903a63bfb"
+  },
+  "gpcg_solver.py": {
+   "path": "g2r3/gpcg_solver.py",
+   "sha256": "a307b122dff4eb9799d01e550532b2340ce907dd5b797a18f577eacc1ac91075"
+  },
+  "signed_nystrom.py": {
+   "path": "g3r1/signed_nystrom.py",
+   "sha256": "23012b6caf158182ba4d139d8ecb9bf9d5cc58c7517ea7e73e6894372e96b962"
+  },
+  "nystrom_ktsvm_matrixfree_spd.py": {
+   "path": "g3r1/nystrom_ktsvm_matrixfree_spd.py",
+   "sha256": "930a175a531e414f8e397a27574c26fb0de1e9bed73830ac367a2c2dd35aa27e"
+  }
+ },
+ "gate_summaries_sha256": {
+  "g0/g0_raw_data_validation.json": "c1f0223667491a04d0f6c8253e44d5802009db4459ab25767591d8684d636b0d",
+  "g1/g1_preprocessing_validation.json": "7d6ffbe43766ec602dc77f8c3f88f2b60fcc70c206b4f5711898911d4fac670e",
+  "g2r3/g2r3_gate_summary.json": "b6834a683230b649ea0930085ed00de1b3f389dc591452d5e1497411a1c4cbc9",
+  "g3r2/g3r2_gate_summary.json": "7747b109f567db9d90cc2b462ac5384d72a76342f3f2e8175957a785e5587bd0",
+  "g3r2/g3r2_pre_registered_config.json": "be45f9116af1ce5fbd719d8753a7bf62fc7c4f7685ae5855a936b029860feb1a"
+ },
+ "frozen_parameters": {
+  "gamma": "10/148",
+  "theta": -1.0,
+  "c": 1.0,
+  "d": 0.001,
+  "tau_W": "1e-10*max|lambda(W)|",
+  "gpcg_thresholds": "r_inf <= 1e-6 AND gap_rel <= 1e-6",
+  "gpcg_hvp_budget_per_twin": 2001015,
+  "vocabulary": "fixed from the complete official training partition (dimension 194)"
+ },
+ "rule": "After Phase 9 starts these files are not changed because of main-study results. A genuine software bug -> STOP, document, request a new decision; no silent repair.",
+ "not_part_of_the_validated_stack": [
+  "run orchestration, sampling, probes, logging (to be written and hashed before the campaign)"
+ ]
+}

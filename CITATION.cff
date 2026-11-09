@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the paper below."
+title: "Matrix-Free Signed Nyström KTSVM: reproducibility package"
+type: software
+license: MIT
+repository-code: "https://github.com/fahmicandrap/ktsvm-signed-nystrom-convergentai2026"
+authors:
+  - family-names: Sylviani
+    given-names: Sisilia
+    orcid: "https://orcid.org/0000-0002-7480-7742"
+  - family-names: Permana
+    given-names: Fahmi Candra
+    orcid: "https://orcid.org/0000-0001-6231-840X"
+  - family-names: Kusuma
+    given-names: Dianne Amor
+    orcid: "https://orcid.org/0000-0003-1391-3485"
+preferred-citation:
+  type: conference-paper
+  title: "Matrix-Free Signed Nyström KTSVM: Resource-Fidelity Trade-offs in Network Intrusion Analytics"
+  authors:
+    - family-names: Sylviani
+      given-names: Sisilia
+    - family-names: Permana
+      given-names: Fahmi Candra
+    - family-names: Kusuma
+      given-names: Dianne Amor
+  conference:
+    name: "Convergent AI 2026"
+  year: 2026

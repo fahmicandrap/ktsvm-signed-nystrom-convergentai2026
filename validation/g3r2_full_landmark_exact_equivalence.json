@@ -1,0 +1,218 @@
+{
+ "created_utc": "2026-09-20T10:51:39.773881+00:00",
+ "rows": [],
+ "comparisons": [
+  {
+   "N": 100,
+   "twin": 1,
+   "dual_dimension": 32,
+   "full_landmark_rank_r": 98,
+   "nystrom_mf": {
+    "status": "CONVERGED",
+    "hvp_count": 441,
+    "hvp_by_category": {
+     "phaseA_trial": 242,
+     "cg": 120,
+     "projected_search": 78,
+     "verification_refresh": 1
+    },
+    "occurrences": {
+     "outer_iterations": 41,
+     "phaseA_exit_same_face": 34,
+     "phaseA_exit_stagnation": 7,
+     "phaseB_exit_gradient": 0,
+     "phaseB_exit_cap": 0,
+     "cg_infeasible_steps": 40,
+     "zero_curvature_descent": 0,
+     "zero_curvature_nondescent": 0,
+     "gradient_refreshes": 0,
+     "verification_refreshes": 1,
+     "verification_failures": 0
+    },
+    "seconds": 0.02685913700000242,
+    "validator": {
+     "r_inf": 5.9104066085780005e-08,
+     "gap": 7.294838959884314e-08,
+     "gap_rel": 7.294838959884314e-08,
+     "D": 0.527997707740034,
+     "bound_violation": 0.0,
+     "passes": true
+    }
+   },
+   "exact_reference": "validated OSQP solution",
+   "exact_gap": 0,
+   "approx_gap_dense_equivalent": 7.297757320667841e-08,
+   "norm_H_hat_minus_H_spectral": 2.7283196506991497e-07,
+   "abs_dD": 1.6812107261898745e-12,
+   "dD_allowed": 4.4392890143253176e-06,
+   "rho_diff_2norm": 9.424614552845313e-07,
+   "rho_diff_allowed": 0.012129716883137395,
+   "epsilon_P": 1.1773915176149785e-12,
+   "max_abs_raw_output_diff": 1.735182122430956e-07,
+   "raw_output_allowed_max": 0.09390204095846966,
+   "all_outputs_within_bound": true,
+   "max_abs_exact_output": 5.17960464321024,
+   "rho_norm_exact": 24.51485457979887,
+   "pass": true
+  },
+  {
+   "N": 100,
+   "twin": -1,
+   "dual_dimension": 68,
+   "full_landmark_rank_r": 98,
+   "nystrom_mf": {
+    "status": "CONVERGED",
+    "hvp_count": 226,
+    "hvp_by_category": {
+     "phaseA_trial": 145,
+     "cg": 68,
+     "projected_search": 12,
+     "verification_refresh": 1
+    },
+    "occurrences": {
+     "outer_iterations": 13,
+     "phaseA_exit_same_face": 7,
+     "phaseA_exit_stagnation": 6,
+     "phaseB_exit_gradient": 0,
+     "phaseB_exit_cap": 0,
+     "cg_infeasible_steps": 12,
+     "zero_curvature_descent": 0,
+     "zero_curvature_nondescent": 0,
+     "gradient_refreshes": 0,
+     "verification_refreshes": 1,
+     "verification_failures": 0
+    },
+    "seconds": 0.014293687000019872,
+    "validator": {
+     "r_inf": 1.0315042775488337e-07,
+     "gap": 2.5803320948435793e-07,
+     "gap_rel": 2.5803320948435793e-07,
+     "D": 0.18403911379464977,
+     "bound_violation": -0.0,
+     "passes": true
+    }
+   },
+   "exact_reference": "validated OSQP solution",
+   "exact_gap": 0,
+   "approx_gap_dense_equivalent": 2.5794798541589614e-07,
+   "norm_H_hat_minus_H_spectral": 1.1232511589474306e-07,
+   "abs_dD": 9.572065362561943e-13,
+   "dD_allowed": 4.07800192583716e-06,
+   "rho_diff_2norm": 1.5793561295970994e-07,
+   "rho_diff_allowed": 0.02277276721275189,
+   "epsilon_P": 1.7655321649101552e-12,
+   "max_abs_raw_output_diff": 1.0315041065744879e-07,
+   "raw_output_allowed_max": 0.17665404406962287,
+   "all_outputs_within_bound": true,
+   "max_abs_exact_output": 5.45919107451944,
+   "rho_norm_exact": 17.66397245103401,
+   "pass": true
+  },
+  {
+   "N": 300,
+   "twin": 1,
+   "dual_dimension": 96,
+   "full_landmark_rank_r": 292,
+   "nystrom_mf": {
+    "status": "CONVERGED",
+    "hvp_count": 1124,
+    "hvp_by_category": {
+     "phaseA_trial": 957,
+     "cg": 117,
+     "projected_search": 49,
+     "verification_refresh": 1
+    },
+    "occurrences": {
+     "outer_iterations": 52,
+     "phaseA_exit_same_face": 31,
+     "phaseA_exit_stagnation": 21,
+     "phaseB_exit_gradient": 2,
+     "phaseB_exit_cap": 0,
+     "cg_infeasible_steps": 49,
+     "zero_curvature_descent": 0,
+     "zero_curvature_nondescent": 0,
+     "gradient_refreshes": 0,
+     "verification_refreshes": 1,
+     "verification_failures": 0
+    },
+    "seconds": 0.22312255599999276,
+    "validator": {
+     "r_inf": 3.504907271079105e-07,
+     "gap": 7.509381863002318e-07,
+     "gap_rel": 2.0881683980470333e-07,
+     "D": 3.5961572208570405,
+     "bound_violation": -0.0,
+     "passes": true
+    }
+   },
+   "exact_reference": "validated OSQP solution",
+   "exact_gap": 9.57456336436735e-13,
+   "approx_gap_dense_equivalent": 7.534533059683213e-07,
+   "norm_H_hat_minus_H_spectral": 3.5110145985411504e-06,
+   "abs_dD": 2.710098812030992e-11,
+   "dD_allowed": 0.00016928575115062074,
+   "rho_diff_2norm": 1.2506450192058473e-05,
+   "rho_diff_allowed": 0.03934883385433948,
+   "epsilon_P": 1.1818457323897746e-10,
+   "max_abs_raw_output_diff": 9.246084037073388e-06,
+   "raw_output_allowed_max": 0.5313374107632294,
+   "all_outputs_within_bound": true,
+   "max_abs_exact_output": 10.192863155404423,
+   "rho_norm_exact": 43.019627454631,
+   "pass": true
+  },
+  {
+   "N": 300,
+   "twin": -1,
+   "dual_dimension": 204,
+   "full_landmark_rank_r": 292,
+   "nystrom_mf": {
+    "status": "CONVERGED",
+    "hvp_count": 866,
+    "hvp_by_category": {
+     "phaseA_trial": 619,
+     "cg": 184,
+     "projected_search": 62,
+     "verification_refresh": 1
+    },
+    "occurrences": {
+     "outer_iterations": 62,
+     "phaseA_exit_same_face": 25,
+     "phaseA_exit_stagnation": 37,
+     "phaseB_exit_gradient": 0,
+     "phaseB_exit_cap": 0,
+     "cg_infeasible_steps": 61,
+     "zero_curvature_descent": 0,
+     "zero_curvature_nondescent": 0,
+     "gradient_refreshes": 0,
+     "verification_refreshes": 1,
+     "verification_failures": 0
+    },
+    "seconds": 0.1895884730000148,
+    "validator": {
+     "r_inf": 2.9710136573157797e-09,
+     "gap": 1.3260848613638743e-08,
+     "gap_rel": 6.91675859684317e-09,
+     "D": 1.917205643072614,
+     "bound_violation": -0.0,
+     "passes": true
+    }
+   },
+   "exact_reference": "validated OSQP solution",
+   "exact_gap": 1.5109025142123755e-11,
+   "approx_gap_dense_equivalent": 1.303719332490516e-08,
+   "norm_H_hat_minus_H_spectral": 3.0043552841384145e-06,
+   "abs_dD": 2.0934143307727027e-11,
+   "dD_allowed": 0.0003064592084901114,
+   "rho_diff_2norm": 1.8966900389280962e-08,
+   "rho_diff_allowed": 0.005622252285990438,
+   "epsilon_P": 5.851941153878215e-11,
+   "max_abs_raw_output_diff": 6.34699759416435e-09,
+   "raw_output_allowed_max": 0.07863118348380246,
+   "all_outputs_within_bound": true,
+   "max_abs_exact_output": 10.876855726647122,
+   "rho_norm_exact": 37.08301899586683,
+   "pass": true
+  }
+ ]
+}

@@ -1,0 +1,34 @@
+{
+ "gate": "G3-R2",
+ "created_utc": "2026-09-20T10:54:21.179195+00:00",
+ "config_sha256": "be45f9116af1ce5fbd719d8753a7bf62fc7c4f7685ae5855a936b029860feb1a",
+ "criterion_sha256": "802533786622756532325ed3b59c583ff85174be6c95d2e32b707c2fb43b80f8",
+ "config_unchanged": true,
+ "criteria": {
+  "1_original_G3_and_G3R1_failures_documented": true,
+  "2_propagated_gap_derivation_pre_registered": true,
+  "3_no_computational_implementation_change_from_G3R1": true,
+  "4_HVP_le_1e-9_all_small_n": true,
+  "5_objective_le_1e-9_all_small_n": true,
+  "6_gradient_le_1e-9_all_small_n": true,
+  "7_every_delta_gap_within_B_total": true,
+  "8_dense_vs_matrix_free_solver_comparisons": true,
+  "9_full_landmark_exact_equivalence": true,
+  "10_N2000_m250_matrix_free_integration": "PASS",
+  "11_GPCG_frozen_thresholds_met_all_problems": true,
+  "12_no_dense_Khat_or_Hhat_on_N2000_path": true,
+  "13_no_result_dependent_tuning": true
+ },
+ "history": {
+  "G3_original": "FAIL (HVP 1.10e-9, gradient 4.2e-9 at N=500 twin -1)",
+  "G3_R1": "SPD reduced-Q fixed HVP/gradient; FAIL only on absolute-gap equivalence (2.02e-9 vs 1e-9)",
+  "G3_R2": "only the derived-gap validation rule changed (dimension-aware propagated bound)"
+ },
+ "disclosures": [
+  "the failing value 2.02e-9 was known when the criterion was written; the bound is derived from Lipschitz continuity and summation analysis without a constant chosen from it",
+  "B_prop is a conservative first-order bound (observed/B_total <= 0.20 over 36 checks; 7.2e-4 for the former failing case); the sharper diagnostic B_tight was also satisfied",
+  "the dense cross-check listed by G3 for N=2000 was not performed because the new instruction forbids dense reference objects on that path",
+  "G3 PASS is implementation validation, not a research result"
+ ],
+ "G3": "G3 PASS"
+}

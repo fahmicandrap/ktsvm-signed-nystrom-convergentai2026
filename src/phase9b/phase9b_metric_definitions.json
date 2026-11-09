@@ -1,0 +1,53 @@
+{
+ "created_utc": "2026-09-20T11:38:44.825993+00:00",
+ "K1_computational": {
+  "T_load": "official CSV read (train+test)",
+  "T_prep": "sample selection, scaler fit on the sample, transform of sample and probe",
+  "T_kernel": "Nystrom: C = K[:,L]; exact: full Gram",
+  "T_factor": "Nystrom: signed_nystrom (eigh of W, Phi)",
+  "T_operator_or_buildH": "Nystrom: TwinOperatorSPD builds; exact: build_problem (S/M assembly, LU, long-double refinement, H)",
+  "T_solve_plus/minus": "GPCG per twin",
+  "T_train": "sum of method stages excluding load/prep (None if a stage is missing; never inferred)",
+  "T_probe": "probe scoring",
+  "T_pairs": "kernel-pair evaluation (Nystrom)",
+  "T_total_process": "process wall-clock",
+  "timers": [
+   "perf_counter (wall)",
+   "process_time (CPU)"
+  ],
+  "warmup_excluded": true
+ },
+ "K2_memory": {
+  "peak_rss": "max over phases of VmHWM after writing 5 to /proc/self/clear_refs at phase start; cross-check ru_maxrss",
+  "baseline_rss": "VmRSS at worker start",
+  "phase_specific_VmHWM": true,
+  "major_arrays": "maximum array size and shape from object inventory at checkpoints"
+ },
+ "K3_solver": "per twin: status, HVP total and category counts, r_inf, gap_rel, gap, dual objective, CG-cap events (phaseB_exit_cap), CG infeasible steps, zero-curvature events, gradient/verification refresh events, phase counts",
+ "K4_spectrum": "m, r, n_positive(W), n_negative(W), n_zero(W), tau_W, min/max retained |lambda|, unique/duplicate landmark predictor vectors, cond(B), cond(A) (diagnostics)",
+ "K5_kernel_pair_fidelity": {
+  "pairs": "200,000 fixed ordered pairs per (seed,N)",
+  "error": "e = K - Khat",
+  "RMSE_pair": "sqrt(mean(e^2))",
+  "relative_L2": "||e||_2/||K||_2",
+  "max_abs_error": "max|e|",
+  "p99_abs_error": "99th percentile of |e| (numpy linear)",
+  "mean_signed_error": "mean(e)"
+ },
+ "K6_raw_function_fidelity": {
+  "where": "only N=2000 and N=4000 (exact reference exists); each Nystrom configuration separately vs exact; f_plus and f_minus separately",
+  "RMSE": "sqrt(mean((f_hat-f)^2))",
+  "NRMSE": "RMSE/std_population(f_exact); NA if std < 1e-12",
+  "pearson": "NA if either vector has zero variance",
+  "max_abs_deviation": "max|f_hat-f|",
+  "p99_abs_deviation": "99th percentile |f_hat-f|",
+  "relative_L2": "||f_hat-f||_2/||f||_2",
+  "forbidden": [
+   "combining f_plus/f_minus into labels",
+   "predictions",
+   "accuracy/F1/MCC/AUC"
+  ]
+ },
+ "interpretation_rule": "no 'better'/'worse' wording before results; quantitative differences only; function fidelity to exact is claimed only at N=2000,4000; for N>4000 use kernel-pair diagnostics and resource/convergence behavior",
+ "aggregation": "per (N,m) across seeds: median and IQR for time/memory, mean +/- SD for fidelity, all seed values retained; no significance tests"
+}

@@ -1,0 +1,9 @@
+# Versions of the execution environment of the 40 cells (manifests/environment.json; scikit-learn from the hardware audit)
+numpy==2.4.4
+scipy==1.17.1
+pandas==3.0.2
+scikit-learn==1.8.0
+threadpoolctl
+psutil
+# Only for redrawing the figures (version used for the archived figures)
+matplotlib==3.11.2
